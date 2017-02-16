@@ -1,0 +1,116 @@
+html * {
+  padding: 0;
+  margin: 0;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:'Futura', Sans-Serif;
+  font-size: 10px;
+  color: white;
+  background-color: #E30613;
+}
+
+header {
+	height: 100vh;
+	min-height: 650px;
+	padding: 7rem;
+
+	isolation: isolate;
+}
+
+/* typography // base styles */
+a {
+	color: inherit;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+ul {
+	list-style: none;
+}
+
+li {
+	/* if all children in the flex container have a flex-grow of 1, then the REMAINING SPACE in the container will be equally distributed. If one item has a flex-grow of 2, then that item will take up twice as much space.*/
+	flex-grow: 1;
+	/* defines the default space of an element before remaining space is distributed. best to use a percentage//unit */
+	flex-basis: 33.33%;
+	text-align: center;
+
+	/* we could also just use (it combines the above properties plus flex-shrink....*/
+	flex: 1 33.33%;
+}
+/* end typography */
+
+li:first-of-type {
+	text-align: left;
+}
+
+li:last-of-type {
+	text-align: right;
+}
+
+nav {
+	position: fixed;
+	left: 7rem;
+	right: 7rem;
+}
+
+.main-menu {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+/*	position: relative;*/
+}
+
+.logo {
+	width: 70px;
+/*	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);*/
+}
+
+.landing {
+	height: 75%;
+	background: url(../img/bkg-landing.png) right center no-repeat;
+	background-size: 70% auto;
+	margin-top: 4.5rem;
+
+	display: flex;
+	align-items: center;
+}
+
+.tagline {
+	width: 50%;
+	font-size: 2rem;
+	mix-blend-mode: overlay;
+}
+
+@media all and (max-width: 1200px) {
+	.tagline {
+		width: 70%;
+		font-size: 2rem;
+		mix-blend-mode: normal;
+	}
+
+	.landing {
+		background-size: auto 100%;
+		background-position: center;
+		margin-top: 4.5rem;
+
+		display: flex;
+		align-items: center;
+	}
+	.main-menu {
+		display: block;
+	/*	position: relative;*/
+	}
+}
+
+
+
